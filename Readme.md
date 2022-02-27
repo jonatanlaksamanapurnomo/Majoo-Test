@@ -1,8 +1,13 @@
 # Majoo BE Test
 ## Simple API for Majoo BE Test
+Backend API USING GO , GORM, Postgre , with seeder and schema auto migrate
 
 
-BACKEND API USING GO , GORM, Postgre , with seeder and schema auto migrate
+## Instalation
+**I already hosting postgre db in this app the credential can be viewed at .env files so you dont have to migrate it in your local mechine**
+-Clone this project 
+-go mod tidy
+-go run main.go
 
 
 ## Note
