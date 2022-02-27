@@ -17,11 +17,6 @@ BACKEND API USING GO , GORM, Postgre , with seeder and schema auto migrate
 - Report API with header auth
 
 
-## Problem I ran to
-This project is simple yet challenging since go lang is not my main progamming language.
-but yaah progamming language just a 
-
-
 ## Routes 
 http://127.0.0.1:8000/login [POST]
 
