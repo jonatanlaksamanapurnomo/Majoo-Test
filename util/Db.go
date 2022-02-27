@@ -9,7 +9,7 @@ import (
 
 var (
 	host     = GetValueEnv("PG_HOST")
-	port     = 5432
+	port     = 2345
 	user     = GetValueEnv("PG_USER")
 	password = GetValueEnv("PG_PASSWORD")
 	dbname   = GetValueEnv("PG_DB_NAME")

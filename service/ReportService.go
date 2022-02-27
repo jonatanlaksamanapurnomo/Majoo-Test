@@ -10,7 +10,7 @@ import (
 
 func Report(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
-	transaction, err := report.GetTransactionReport(r, dbconn, w)
+	transaction, err := report.GetTransactionReport(r, dbconn)
 	if err == nil {
 		var resp response_models.ReportResponse
 		resp.Data = transaction

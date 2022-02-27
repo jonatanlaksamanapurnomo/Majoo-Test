@@ -12,7 +12,7 @@ import (
 	"time"
 )
 
-func GetTransactionReport(r *http.Request, dbconn *gorm.DB, w http.ResponseWriter) ([]models.Transaction, error) {
+func GetTransactionReport(r *http.Request, dbconn *gorm.DB) ([]models.Transactions, error) {
 	if r.Header.Get("Authorization") == "" {
 		return nil, errors.New(enums.AUTH_ERROR)
 	}
@@ -22,8 +22,8 @@ func GetTransactionReport(r *http.Request, dbconn *gorm.DB, w http.ResponseWrite
 		return nil, errors.New(enums.AUTH_ERROR)
 	}
 	var loginId uint = jwtClaims.Id
-	var transaction = models.GetTransactions()
-	err := dbconn.Select("transactions.bill_total , merchants.merchant_name").
+	var transaction = models.GetReports()
+	err := dbconn.Select("transactions.bill_total as omzet , merchants.merchant_name").
 		Joins("join merchants on merchants.id = transactions.merchant_id").
 		Where("merchants.user_id = ? and date_part('month', transactions.created_at) = ?", loginId, time.November).
 		Where("merchants.id = transactions.outlet_id").
