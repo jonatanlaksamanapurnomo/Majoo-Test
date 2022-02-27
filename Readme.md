@@ -5,7 +5,7 @@ Backend API USING GO , GORM, Postgre , with seeder and schema auto migrate
 
 ## Instalation
 **I already hosting postgre db in this app the credential can be viewed at .env files so you dont have to migrate it in your local mechine**
-
+(This will be deleted soon after this test result come out)
 - Clone this project 
 - go mod tidy
 - go build main.go
