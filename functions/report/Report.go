@@ -13,6 +13,9 @@ import (
 )
 
 func GetTransactionReport(r *http.Request, dbconn *gorm.DB, w http.ResponseWriter) ([]models.Transaction, error) {
+	if r.Header.Get("Authorization") == "" {
+		return nil, errors.New(enums.AUTH_ERROR)
+	}
 	var loginToken string = strings.Split(r.Header.Get("Authorization"), " ")[1]
 	var jwtClaims, jwtErr = util.GetJWTValue(loginToken)
 	if jwtErr != nil {
