@@ -19,4 +19,13 @@ BACKEND API USING GO , GORM, Postgre , with seeder and schema auto migrate
 
 ## Problem I ran to
 This project is simple yet challenging since go lang is not my main progamming language.
-but yaah progamming language just a tool so i manage to create it as clean as posibile
+but yaah progamming language just a 
+
+
+## Routes 
+http://127.0.0.1:8000/login [POST]
+
+http://127.0.0.1:8000/report?page=1&page_size=5 [GET]
+
+Pada file ini akan disertakan postman collection dan dokumentasi API
+

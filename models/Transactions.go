@@ -1,7 +1,7 @@
 package models
 
 type Transaction struct {
-	ID           uint
+	//ID           uint
 	MerchantName string `gorm:"type:string" json:"merchant_name"`
 	//Merchant   Merchant `gorm:"foreignKey:MerchantRefer"`
 	//OutletId int `gorm:"type:int" json:"outlet_id"`

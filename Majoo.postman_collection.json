@@ -1,0 +1,91 @@
+{
+	"info": {
+		"_postman_id": "7aa03455-f33d-4347-b200-7a05194f688f",
+		"name": "Majoo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\":\"admin1\",\r\n    \"password\":\"admin1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{majoo_url}}/login",
+					"host": [
+						"{{majoo_url}}"
+					],
+					"path": [
+						"login"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "asdasd",
+							"disabled": true
+						},
+						{
+							"key": "name",
+							"value": "asdasdasd",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetReport",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJJZCI6MiwiZXhwIjoxNjQ2MDIyMjE1LCJpc3MiOiJBdXRoU2VydmljZSJ9.gxVJuT0EzA3kFI-6C5Xh3Nev0H8Pcr2bbSs9F1aOWcs",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "",
+						"type": "default",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{majoo_url}}/report?page=2&page_size=2",
+					"host": [
+						"{{majoo_url}}"
+					],
+					"path": [
+						"report"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						},
+						{
+							"key": "page_size",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

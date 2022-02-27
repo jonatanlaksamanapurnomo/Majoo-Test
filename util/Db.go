@@ -7,12 +7,12 @@ import (
 	"log"
 )
 
-const (
-	host     = "localhost"
+var (
+	host     = GetValueEnv("PG_HOST")
 	port     = 5432
-	user     = "postgres"
-	password = "root"
-	dbname   = "majoo-db"
+	user     = GetValueEnv("PG_USER")
+	password = GetValueEnv("PG_PASSWORD")
+	dbname   = GetValueEnv("PG_DB_NAME")
 )
 
 func GetConnection() *gorm.DB {

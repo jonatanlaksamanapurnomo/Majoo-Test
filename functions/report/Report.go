@@ -20,9 +20,9 @@ func GetTransactionReport(r *http.Request, dbconn *gorm.DB, w http.ResponseWrite
 	}
 	var loginId uint = jwtClaims.Id
 	var transaction = models.GetTransactions()
-	err := dbconn.Select("transactions.Id,transactions.bill_total , merchants.merchant_name  ").
+	err := dbconn.Select("transactions.bill_total , merchants.merchant_name").
 		Joins("join merchants on merchants.id = transactions.merchant_id").
-		Where(" merchants.user_id = ? and date_part('month', transactions.created_at) = ?", loginId, time.November).
+		Where("merchants.user_id = ? and date_part('month', transactions.created_at) = ?", loginId, time.November).
 		Where("merchants.id = transactions.outlet_id").
 		Scopes(Paginate(r)).Find(&transaction).Error
 	return transaction, err
